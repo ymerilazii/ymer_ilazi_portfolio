@@ -1,0 +1,164 @@
+
+body {
+    background: rgb(42, 42, 42);
+    background: -moz-radial-gradient(circle, rgba(42, 42, 42, 1) 36%, rgba(29, 29, 29, 1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(42, 42, 42, 1) 36%, rgba(29, 29, 29, 1) 100%);
+    background: radial-gradient(circle, rgba(42, 42, 42, 1) 36%, rgba(29, 29, 29, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a2a2a", endColorstr="#1d1d1d", GradientType=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment: fixed;
+    color: #c7c7c7;
+    height: 100%;
+}
+
+*::selection {
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+    color: #c7c7c7;
+}
+
+a i {
+    font-size: 25px;
+    padding: 10px 0;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border-bottom: 1px solid rgba(199, 199, 199, 0.15);
+}
+
+.navbar-brand {
+    display: none;
+    text-align: center;
+    font-family: Yellowtail Regular, serif;
+}
+.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.snapchat:hover {
+    color: #f8f10d;
+}
+
+.discord:hover {
+    color: #5865F2;
+}
+
+.github:hover {
+    color: #171515;
+
+}
+
+.nav-link {
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.75) !important;
+
+}
+
+.nav-link:hover {
+    color: #ebebeb !important;
+}
+
+.active {
+    color: #fff !important;
+}
+
+.y-font {
+    font-family: Yellowtail Regular, serif;
+    color: rgba(128, 128, 128, 0.76);
+    font-size: 20px;
+    display: block !important;
+}
+
+#terminal {
+    font-family: monospace;
+    font-size: 13px;
+    background-color: #444 !important;
+    color: rgba(208, 208, 208, 0.95);
+    width: 100%;
+    height: 300px;
+    border-radius: 0 0 5px 5px;
+}
+
+#terminal:focus {
+    border: 1px solid #ced4da;
+    box-shadow: none;
+}
+
+.fakeButtons {
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    border: 1px solid #9d252b;
+    position: relative;
+    left: 9px;
+    background-color: #ff3b47;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fakeMinimize {
+    left: 14px;
+    background-color: #ffc100;
+    border-color: #9d802c;
+}
+
+.fakeZoom {
+    left: 20px;
+    background-color: #00d742;
+    border-color: #049931;
+}
+
+.fakeMenu {
+    box-sizing: border-box;
+    height: 25px;
+    background-color: #c2c2c2;
+    margin: 0 auto;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: left !important;
+}
+
+.term {
+    text-align: -webkit-center;
+}
+
+@media (max-width: 992px) {
+    body {
+        text-align: -webkit-center !important;
+    }
+
+    .term {
+        width: 100% !important;
+    }
+
+    .p-5 {
+        padding: 1rem !important;
+    }
+    .navbar-brand {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        left: 3%;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        position: relative !important;
+        left: 4% !important;
+    }
+}

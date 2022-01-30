@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block index %}
+        active
+    {% endblock %}
+    <title>{% block title %}
+        Homepage
+    {% endblock %}</title>
+</head>
+
+<body>
+{% block content %}
+    <div class="row">
+        <div class="col-lg-7">
+            <span class="fw-lighter mb-0 y-font">&lt;h1&gt;</span>
+            <h1 class="display-1 fw-normal">Hi,</h1>
+            <h1 class="display-1 fw-normal">I'm Ymer</h1>
+            <h1 class="display-1 fw-normal">Web Developer <span class="fw-lighter mb-0 y-font">&lt;/h1&gt;</span>
+            </h1>
+            <br>
+            <span class="fw-lighter mb-0 y-font">&lt;p&gt;</span>
+            <p class="font-monospace mb-0 fs-4">Python and Django Developer</p>
+            <span class="fw-lighter mb-0 y-font">&lt;/p&gt;</span>
+        </div>
+        <div class="term col-lg-5 mt-5">
+            <form style="width: 80%;" method="post" id="TConsole" action="{% url 'terminal' %}">
+                {% csrf_token %}
+                <div class=fakeMenu>
+                    <div class="fakeButtons fakeClose"></div>
+                    <div class="fakeButtons fakeMinimize"></div>
+                    <div class="fakeButtons fakeZoom"></div>
+                </div>
+                <textarea id="terminal" class="form-control terminal" autocomplete="off" autocorrect="off"
+                          autocapitalize="off"
+                          spellcheck="false"></textarea>
+                <input id="tcode" type="text" name="page" style="display: none">
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/terminal.js' %}"></script>
+{% endblock %}
+
+
+</body>
+</html>

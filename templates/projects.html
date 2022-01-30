@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block projects %}
+    active
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+        Projects
+    {% endblock %}</title>
+    {% block custom_header %}
+        <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+    {% endblock %}
+
+</head>
+<body>
+{% block content %}
+    {{ BASE_DIR }}
+
+
+    <h1 class="display-3 text-center">Projects <i class="bi bi-activity"></i></h1>
+    <div class="mt-4 text-center">
+        <a href="#projects" class="font-monospace mt-2">See Projects>></a>
+    </div>
+    <ul class="projects-grid text-center" id="projects">
+        {% for projects in object_list %}
+            <li class="project-card" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="{{ projects.project_image }}">
+                <div class="project-inner">
+                    <header>
+                        <div class="project-top mb-3">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4 class="p-title fs-4 mb-2">{{ projects.project_name }}</h4>
+                        <div class="project-description" id="workflow">
+                            <p>{{ projects.workflow }}</p>
+                        </div>
+                    </header>
+                    <footer>
+                        <ul class="project-tech">
+                            {% for i in projects.technologies.all %}
+                                <li>{{ i }}</li>
+                            {% endfor %}
+                        </ul>
+                    </footer>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-light">
+                <div class="border-0 modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Modal title</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="border-0 modal-body text-start">
+                    <h5>Projects Details:</h5>
+                    <p class="m-content"></p>
+                </div>
+                <div class="border-0 justify-content-start modal-footer">
+                    <ul class="tech-modal">
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', function (event) {
+            let button = event.relatedTarget
+            let id = button.getAttribute('data-bs-whatever')
+            let workflow = document.getElementById('workflow').innerText;
+            let image = "../media/" + id;
+            let modalTitle = exampleModal.querySelector('.modal-title')
+            let modalBody = exampleModal.querySelector('.modal-body')
+            let modalContent = exampleModal.querySelector('.m-content')
+            modalBody.style.backgroundImage = "url(" + image + ")"
+            modalBody.style.backgroundSize = "cover"
+            modalBody.style.backgroundPosition = "bottom"
+
+            modalTitle.textContent = 'Project Name'
+            modalContent.textContent = workflow
+        })
+    </script>
+{% endblock %}
+</body>
+</html>

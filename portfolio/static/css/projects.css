@@ -1,0 +1,106 @@
+.projects-grid {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    position: relative;
+}
+
+@media (max-width: 1080px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+.project-card {
+    position: relative;
+    background-color: #494949;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    visibility: visible;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    background-color: #5d5d5d;
+    transform: translate(0, -4px);
+}
+
+.project-inner {
+    box-shadow: 0 6px 18px -9px #565656;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    height: 100%;
+    padding: 2rem 1.75rem;
+    border-radius: 4px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.project-card:hover .project-inner {
+    box-shadow: 0 10px 30px -15px #b9b9b9;
+}
+
+.project-card:hover .bi-award {
+    color: rgba(255, 227, 109, 0.92);
+}
+
+.project-top {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 38px;
+}
+
+.p-title {
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.project-description {
+    text-align: left;
+    font-size: 15px;
+}
+
+.project-tech {
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 20px 0px 0px;
+    list-style: none;
+}
+
+.project-tech li {
+    margin-right: 10px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #a2a2a2;
+}
+.modal-content{
+    background-color: #797979!important;
+}
+.tech-modal{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    font-family: monospace;
+}
+.tech-modal li{
+    margin-right: 14px;
+}

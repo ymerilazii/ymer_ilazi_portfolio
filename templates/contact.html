@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+    active
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+        Contact
+    {% endblock %}</title>
+</head>
+{% block custom_header %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+<body>
+{% block content %}
+    <h1 class="display-3 text-center mb-3">Contact <i class="bi bi-telephone"></i></h1>
+    {% for contact in contact_list %}
+        <div class="row text-center mt-5">
+            <h3><i class="bi bi-person-circle"></i></h3>
+            <h3>{{ contact.firstname }} {{ contact.lastname }}</h3>
+        </div>
+        <div class="row text-center mt-4">
+            <h3><i class="bi bi-envelope"></i></h3>
+            <a href="mailto:{{ contact.email }}"><h3>{{ contact.email }}</h3></a>
+        </div>
+        <div class="row text-center mt-4">
+            <h3><i class="bi bi-telephone"></i></h3>
+            <h3>{{ contact.phone_number }}</h3>
+        </div>
+        <div class="social d-flex text-center justify-content-center mt-5">
+            {% for i in social.items %}
+                <a href="{{ i.1.0 }}" class="px-1 {{ i.0 }}"><i class="bi {{ i.1.1 }}"></i></a>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+{% endblock %}
+</body>
+</html>
